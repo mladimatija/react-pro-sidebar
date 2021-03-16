@@ -16,10 +16,11 @@ const Menu: React.ForwardRefRenderFunction<unknown, Props> = (
   ref,
 ) => {
   const menuRef: LegacyRef<HTMLElement> = (ref as any) || React.createRef<HTMLElement>();
+
   return (
     <nav
       ref={menuRef}
-      className={classNames('pro-menu', className, {
+      className={classNames('pro-menu', className, {// @ts-ignore
         [`shaped ${iconShape}`]: ['square', 'round', 'circle'].indexOf(iconShape) >= 0,
       })}
       {...rest}
